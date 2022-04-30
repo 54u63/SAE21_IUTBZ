@@ -31,6 +31,22 @@ Réaliser en groupe de 3 un petit réseau d'entreprise comprenant : un serveur D
   - [Limites et idées non terminées](#limites-et-idées-non-terminées)
   - [Reposit GitHub de chaque membre](#reposit-github-de-chaque-membre)
   
+  ## Plan d'adressage
+  ### Dans l'entreprise
+  
+  Avant de commencer quelconque configuration nous avons dû choisir un plan d'adresage. Pour cela nous avons choisis une base d'adresse privé en 192.168.0.0/16 pour l'intranet de l'entreprise. Nous avons ensuite créer des sous-réseaux pour chaque Vlan, par exemple pour le Vlan10 192.168.10.0/24. Cela nous permet de savoir directement à quel réseau appartient la machine et nous donne la possibilité d'avoir 255 machines (addresse de réseau et de broadcast à enlever) par Vlan.
+<br>
+En résumé : 
+
+Service | Vlan | Adresse du sous-réseau
+--------|------|-----------------------
+Service Informatique | Vlan 10 | 192.168.10.0/24
+Administratif | Vlan 20 | 192.168.20.0/24
+Commerciaux | Vlan 30 | 192.168.30.0/24
+Serveurs | Vlan 50 | 192.168.50.0/24
+
+
+
   
     
     

@@ -172,18 +172,21 @@ vim named.conf.local
 ```
 <img src=./images/named.conf.local.png>
 </br>
-On commence par copier la configuration du db.local : </br>
+On commence par copier la configuration du db.local :
+<br>
 ```
 cp db.local db.SAE
 ```
 </br>
-Une fois cela fait nous pouvons rentrer dans la configuration de la zone : </br>
+Une fois cela fait nous pouvons rentrer dans la configuration de la zone : 
+</br>
 ```
 vim db.SAE
 ```
 <img src=./images/db.SAE.png></br>
 
 Une fois terminé il faut redémarrer le service bind9 :
+<br>
 ```
 systemctl restart bind9
 ```

@@ -1,0 +1,10 @@
+/ip firewall nat
+
+add action=masquerade chain=srcnat out-interface=ether1 in-interface=ether2
+# Permet de remplacer l'adresse des paquets entrant provrenant de l'interface interne par l'adresse de l'interface externe
+
+add action=dst-nat chain=dstnat dst-port=80 in-interface=ether1 protocol=tcp to-addresses=192.168.60.200 to-ports=80
+# Permet de rediriger les paquets entrant vers le port 80 de l'interface externe vers l'adresse 192.168.60.200 (Notre serveur WEB/DNS)
+
+add action=dst-nat chain=dstnat dst-port=53 in-interface=ether1 protocol=udp to-addresses=192.168.60.200 to-ports=53
+# Permet de rediriger les paquets entrant vers le port 53 de l'interface externe vers l'adresse 192.168.60.200 (Notre serveur WEB/DNS)

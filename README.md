@@ -173,13 +173,11 @@ vim named.conf.local
 <img src=./images/named.conf.local.png>
 </br>
 On commence par copier la configuration du db.local :
-<br>
 ```
 cp db.local db.SAE
 ```
 </br>
 Une fois cela fait nous pouvons rentrer dans la configuration de la zone : 
-</br>
 ```
 vim db.SAE
 ```

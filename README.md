@@ -59,6 +59,32 @@ Pour cette partie nous avons décidé d'utiliser deux types de routeurs. Le prem
 
   ### Configuration des Vlans 
 
+Nous allons maintenant voir la configuration des Vlans. Pour cela il faut :
+
+(Je précise que pour chaque Vlan nous avons addressé une ip différente au routeur, par exemple pour le réseau 192.169.10.1 le routeur est 192.169.10.254)
+
+- Addresser une liste d'ip autoriser à acceder au routeur avec la commande **access-list 1 permit @réseau @masque_inversé**
+- Addresser une liste d'ip autoriser à acceder au VLAN avec la commande **ip access-list extended VLAN**
+- Il faut ensuite mettre en place des ACLs pour autoriser ou refuser certains protocols venant d'un réseau vers un autre, pour cela nous allons utiliser la commande **permit/deny protocol @réseau_source @réseau_destination**
+- Pour refuser tout les protocols venant d'un réseau vers un autre on peut utilsier la commande **deny ip @réseau_source @réseau_destination
+- Configurer l'interface fa0/0 pour chaque Vlan en précisant l'IP du routeur pour chaque vlan, l'encapsulation ainsi que l'ip NAT pour sortir sur le réseau
+
+Dans notre cas, nous avons autoriser sur toutes les Vlans le protocol 22 pour le protocol SSH, le protocol 80 et 443 pour l'accès au serveur WEB et le protocol ICMP afin que les machines puissent se pingent entre elles. Comme le VLAN10 appartient au réseau du Service Informatique il a accès à tout les autres Vlans. Ce qui nous donne : </br>
+
+<img src=./images/ACL.png>
+<img src=./images/R1-CONF.png>
+<img src=./images/Interface-R1.png>
+
+</br>
+
+Je précise que pour le PC1 son ip est 192.168.10.1 comme marqué sur le montage et en routes 192.168.10.254 et 192.168.50.254.</br>
+On peut maintenant vérifier que cela fonctionne en regardant si le PC1 peut ping les autres machines du réseau ainsi que le routeur :</br>
+
+<img src=./images/pc1-ping.png>
+
+</br>
+
+Nous pouvons aussi vérifier sur WireShark que les requêtes émises entre les machines sont bien "tagués" par le numéro du Vlan.
 
 
 

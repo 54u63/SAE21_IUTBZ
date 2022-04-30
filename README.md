@@ -201,7 +201,10 @@ Voici l'historique de toutes les commandes passées après l'installation de bin
 
 <img src=./images/historique-commande.png>
 
-
+  ## Configuration des autorisations/restrictions
+  ### Pare-Feu/Firewall
+  
+  
 
 
   

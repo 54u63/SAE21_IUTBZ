@@ -204,6 +204,19 @@ Voici l'historique de toutes les commandes passées après l'installation de bin
   ## Configuration des autorisations/restrictions
   ### Pare-Feu/Firewall
   
+  Nous avons décider de configurer un firewall/pare-feu sur le routeur MikroTik qui se trouve en la DMZ et l'extérieur car ce dernier permet aux connexions qui sont déjà établies (established) à d'autres connexions de passer et aux nouvelles connections de s'établir seulement si les conditions du DNAT sont respectées. Ces dernières permettent permet par exemple de filtrer tout les paquets entrant mais de pouvoir laisser passer la connexion SSH au routeur mais aussi vers le routeur Cisco du réseau Interne de l'entreprise
+  
+<img src=./images/ssh>
+
+  ### NAT
+  
+Nous avons premièrement mis en place un NAT entre l'intranet de l'entreprise et la DMZ et une deuxième entre la DMZ et internet. Le DNAT lui permet de rediriger uniquement les ports 80 et 53 afin de pouvoir accèder au serveur WEB et DNS. Nous pouvons donc accéder depuis l'extérieur accéder au serveur DNS en faisant des requêtes DNS sur la zone "SAE" et accéder au serveur WEB en HTTP. Si nous avions mis un site en HTTPS nous aurions du permettre au DNAT de rediriger également le port 443.
+<br>
+Voici la configuration du routeur MikroTik pour le NAT et le pare-feu/firewall : 
+
+- [NAT](./confmikrotik/nat.txt)
+- [Firewall](./confmikrotik/pare-feu.rsc)
+- [Configuration Mikrotik](./confmikrotik/mikrotik_conf.rsc)
   
 
 

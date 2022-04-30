@@ -52,6 +52,15 @@ Dans la DMZ se trouve tout les services et serveurs qui sont accessibles depuis 
   ## Configuration des machines
   ### Routeurs
 
+Pour cette partie nous avons décidé d'utiliser deux types de routeurs. Le premier est, comme précisé juste avant, un routeur MikroTik placé entre la DMZ et l'extérieur car il est très pratique lors de l'installation d'un firewall. Pour le deuxième type il s'agit d'un routeur Cisco placé entre la DMZ et l'intranet de l'entreprise, les routeurs Cisco sont très utilisés dans les entreprises et facilement configurables sur GNS3 c'est pourquoi nous l'avons choisis. Pour le protocol de routage nous avons décidé d'adresser directement au routeur Cisco la route du routeur MikroTik car cela est plus simple et nous évite d'utiliser des protocols de routage comme OSPF/RIP/BGP pour seulement une seule route. Nous avons aussi utilisé un routeur Cisco pour mettre en place un serveur DHCP dont nous verrons la configuration juste après.
+
+<br>
+
+
+
+
+
+
 
   
   

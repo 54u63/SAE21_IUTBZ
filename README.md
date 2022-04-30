@@ -149,7 +149,7 @@ pour ajouter la redirection il faut rajouter **Redirect 301 / @ip_site** </br>
 
 Ce qui nous donne comme résulat lorsque l'on rentre l'addrese IP du serveur WEB (ici 192.168.60.200) : 
 
-[lien vidéo (il faut la télécharger je n'ai pas trouvé d'autre moyen via git](https://github.com/lorenzo-matilla/SAE21/blob/main/Jour%202%20-%20Configuration%20du%20serveur%20WEB/images/vidéos.mp4)
+[lien vidéo (il faut la télécharger je n'ai pas trouvé d'autre moyen via git](https://github.com/s4uc3-1s-n0t-sus/SAE21_IUTBZ/blob/main/images/vidéos.mp4)
 
   
 

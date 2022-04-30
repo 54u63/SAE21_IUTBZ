@@ -216,8 +216,21 @@ Voici la configuration du routeur MikroTik pour le NAT et le pare-feu/firewall :
 - [NAT](./confmikrotik/nat.txt)
 - [Firewall](./confmikrotik/pare-feu.rsc)
 - [Configuration Mikrotik](./confmikrotik/mikrotik_conf.rsc)
-  
 
+  ### Limites et idées non terminées
+  
+Nous allons maintenant passer aux limites de cet exercice et aux idées/parties que nous n'avons pas pu terminées. 
+<br>
+Pour que les machines puissent SSH entre elles nous avions besoin de PC qui tourne sur UNIX, nous avons donc choisi une image fournit par GNS3 pour une DEBIAN. Une fois installé et après l'update de la machine via un sudo apt update, nous avons voulu installer le packet OpenSSH mais nous ne pouvions pas le configurer car le clavier qui était sur la machine ne comportait pas ":". Nous avons donc eu le même problème pour la mise en place du serveur Apache2 dans le réseau de l'entreprise. Même après de nombreuse tentative et l'aide de Mr DRUON (que je salue et remercie pour son aide) pour changer le clavier aucune n'a marcher. Par manque de temps nous n'avons pas eu le temps de réinstaller une nouvelle image.
+<br>
+
+Concernant les limites, nous avons autoriser le serveur DNS à recevoir et à donner n'importe quoi à qui veut le demander. Une fois le fonctionnement du réseau compris il est possible d'initaliser un tunnel en UDP vers ce serveur afin d'accéder aux autres machines du réseau. Pour patcher cela il aurait fallut autoriser que les IP provenant du réseau de l'intranet de l'entreprise et interdire tout autres IP.
+
+  ### Reposit GitHub de chaque membre
+  
+  Lorenzo : https://github.com/lorenzo-matilla/SAE21
+  Mathéo : 
+  Antoine : 
 
   
   

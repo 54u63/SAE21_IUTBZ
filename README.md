@@ -14,22 +14,22 @@ Réaliser en groupe de 3 un petit réseau d'entreprise comprenant : un serveur D
 
 ## Sommaire 
 
-- [SAE21-Groupe-Lorenzo-Antoine-Mathéo](#sae21-groupe-lorenzo-antoine-mathéo)
-  -[Plan d'adressage](#plan-dadressage)
-    -[Dans l'entreprise](#dans-lentreprise)
-    -[Dans la DMZ](#dans-la-dmz)
-  -[Configuration des machines](#configuration-des-machines)
-    -[Routeurs](#routeurs)
-    -[Serveur WEB](#serveur-web)
-      -[Interne](#interne)
-      -[Externe](#externe)
-    -[Serveur Bind/DNS](#serveur-binddns)
-  -[Configuration des autorisations/restrictions](#configuration-des-autorisationsrestrictions)
-    -[Pare-Feu/Firewall](#pare-feufirewall)
-    -[NAT](#nat)
-    -[ACL](#ACL)
-  -[Limites et idées non terminées](#limites-et-idées-non-terminées)
-  -[Reposit GitHub de chaque membre](#reposit-github-de-chaque-membre)
+- [SAE21-Groupe-Lorenzo-Antoine-Mathéo](#sae21-groupe-lorenzo-antoine-mathéo) 
+  - [Plan d'adressage](#plan-dadressage)
+    - [Dans l'entreprise](#dans-lentreprise)
+    - [Dans la DMZ](#dans-la-dmz)<br>
+  - [Configuration des machines](#configuration-des-machines)<br>
+    - [Routeurs](#routeurs)<br>
+    - [Serveur WEB](#serveur-web)<br>
+      - [Interne](#interne)<br>
+      - [Externe](#externe)<br>
+    - [Serveur Bind/DNS](#serveur-binddns)<br>
+  - [Configuration des autorisations/restrictions](#configuration-des-autorisationsrestrictions)<br>
+    - [Pare-Feu/Firewall](#pare-feufirewall)<br>
+    - [NAT](#nat)<br>
+    - [ACL](#ACL)<br>
+  - [Limites et idées non terminées](#limites-et-idées-non-terminées)<br>
+  - [Reposit GitHub de chaque membre](#reposit-github-de-chaque-membre)<br>
   
   
     

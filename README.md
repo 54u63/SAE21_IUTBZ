@@ -20,7 +20,8 @@ Réaliser en groupe de 3 un petit réseau d'entreprise comprenant : un serveur D
     - [Dans la DMZ](#dans-la-dmz)
   - [Configuration des machines](#configuration-des-machines)
     - [Routeurs](#routeurs)
-      - [Configuration des Vlans](#configuration-des-vlans)  
+      - [Configuration du routeur Cisco](#configuration-du-routeur-cisco)
+      - [Configuration des Vlans](#configuration-des-vlans) 
     - [Serveur WEB](#serveur-web)
       - [Interne](#interne)
       - [Externe](#externe)
@@ -57,9 +58,18 @@ Pour cette partie nous avons décidé d'utiliser deux types de routeurs. Le prem
 
 <br>
 
+  ### Configuration du routeur Cisco
+  
+Pour le routeur nous avons choisi du lui addresser l'addresse 192.168.50.254 afin qu'il soit dans un réseau spécialisé pour les serveurs ainsi qu'en .254 afin de respecter les règles métiers. Pour le réseau hors de l'entrepise j'ai chosi le réseau 192.168.60.0/24 et le routeur en .254 pour les mêmes raisons que précédemment </br>
+Nous allons maintenant nous intéresser à la configuration de ce dernier sur l'interface fa0/0 et fa0/1 que on peut voir à l'aide de la commande **ip show interface brief** :</br>
+
+<img src=./images/config-des-ips.png>
+
+</br>
+
   ### Configuration des Vlans 
 
-Nous allons maintenant voir la configuration des Vlans. Pour cela il faut :
+Nous allons maintenant voir la configuration des Vlans. Pour cela il faut : 
 
 (Je précise que pour chaque Vlan nous avons addressé une ip différente au routeur, par exemple pour le réseau 192.169.10.1 le routeur est 192.169.10.254)
 

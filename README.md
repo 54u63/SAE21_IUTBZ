@@ -244,8 +244,10 @@ Concernant les limites, nous avons autoriser le serveur DNS à recevoir et à do
 
   ### Reposit GitHub de chaque membre
   
-  Lorenzo : https://github.com/lorenzo-matilla/SAE21
-  Mathéo : 
+  Lorenzo : https://github.com/lorenzo-matilla/SAE21 
+  <br>
+  Mathéo :
+  <br>
   Antoine : 
 
   ### Entiérement écrit par MATILLA-NORO Lorenzo

@@ -69,7 +69,7 @@ Nous allons maintenant voir la configuration des Vlans. Pour cela il faut :
 - Pour refuser tout les protocols venant d'un réseau vers un autre on peut utilsier la commande **deny ip @réseau_source @réseau_destination
 - Configurer l'interface fa0/0 pour chaque Vlan en précisant l'IP du routeur pour chaque vlan, l'encapsulation ainsi que l'ip NAT pour sortir sur le réseau
 
-Dans notre cas, nous avons autoriser sur toutes les Vlans le protocol 22 pour le protocol SSH, le protocol 80 et 443 pour l'accès au serveur WEB et le protocol ICMP afin que les machines puissent se pingent entre elles. Comme le VLAN10 appartient au réseau du Service Informatique il a accès à tout les autres Vlans. Ce qui nous donne : </br>
+Dans notre cas, nous avons autoriser sur toutes les Vlans le protocol 22 pour le protocol SSH, le protocol 80 et 443 pour l'accès au serveur WEB et le protocol ICMP afin que les machines puissent se pingent entre elles. Il est aussi important d'autoriser les protocols dans les deux sens, c'est à dire du Vlan dont le message est émis et le Vlan dont le message est reçu et faire de même dans l'autre sens pour la réponse. Comme le VLAN10 appartient au réseau du Service Informatique il a accès à tout les autres Vlans. Ce qui nous donne : </br>
 
 <img src=./images/ACL.png>
 <img src=./images/R1-CONF.png>

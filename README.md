@@ -138,6 +138,19 @@ Voici la configuration du site :
   - [Index.html](./SiteWEB/index.html)
   - [Image](./SiteWEB/photo.png)
   - [CSS](./SiteWEB/style.css)
+
+
+  ### Externe
+  
+Pour la configuration du site externe, il faut se rendre dans le fichier **/var/apache2/sites-availables/000-default.conf** afin de préciser le chemin vers le _DocumentRoot_, dans mon cas j'ai simplement fait une redirection vers un site qui m'appartient,
+pour ajouter la redirection il faut rajouter **Redirect 301 / @ip_site** </br>
+
+<img src=./images/site-web.png> </br>
+
+Ce qui nous donne comme résulat lorsque l'on rentre l'addrese IP du serveur WEB (ici 192.168.60.200) : 
+
+[lien vidéo (il faut la télécharger je n'ai pas trouvé d'autre moyen via git](https://github.com/lorenzo-matilla/SAE21/blob/main/Jour%202%20-%20Configuration%20du%20serveur%20WEB/images/vidéos.mp4)
+
   
 
 

@@ -20,6 +20,7 @@ Réaliser en groupe de 3 un petit réseau d'entreprise comprenant : un serveur D
     - [Dans la DMZ](#dans-la-dmz)
   - [Configuration des machines](#configuration-des-machines)
     - [Routeurs](#routeurs)
+      - [Configuration des Vlans](#configuration-des-vlans)  
     - [Serveur WEB](#serveur-web)
       - [Interne](#interne)
       - [Externe](#externe)
@@ -56,6 +57,7 @@ Pour cette partie nous avons décidé d'utiliser deux types de routeurs. Le prem
 
 <br>
 
+  ### Configuration des Vlans 
 
 
 

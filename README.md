@@ -240,7 +240,7 @@ En vérification supplémentaire nous avons voulu aussi montrer qu'un PC apparte
 <img src=./images/ping-exterieur.png>
 </br>
 
-Concernant les limites, nous avons autoriser le serveur DNS à recevoir et à donner n'importe quoi à qui veut le demander. Une fois le fonctionnement du réseau compris il est possible d'initaliser un tunnel en UDP vers ce serveur afin d'accéder aux autres machines du réseau. Pour patcher cela il aurait fallut autoriser que les IP provenant du réseau de l'intranet de l'entreprise et interdire tout autres IP.
+Concernant les limites, nous avons autoriser le serveur DNS à recevoir et à donner n'importe quoi à qui veut le demander. Une fois le fonctionnement du réseau compris il est possible d'initaliser un tunnel en UDP vers ce serveur afin d'accéder aux autres machines du réseau. Pour patcher cela il aurait fallut autoriser que les IP provenant du réseau de l'intranet de l'entreprise et interdire toutes les autres IP.
 
   ### Reposit GitHub de chaque membre
   

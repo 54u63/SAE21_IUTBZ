@@ -128,7 +128,17 @@ On peut voir que le serveur DHCP et bien connecter au réseau : </br>
 
 <img src=./images/DHCP-PING.png>
 
+  ## Serveur WEB
+  ### Interne
+  
+  Pour le serveur Web interne que nous n'avons pas eu le temps de finir, nous avions décidé de le placer sur un PC dans le Vlan 50 (serveur) avec l'adresse 192.168.50.10/24. Nous avions décider le lancer sur Apache2 comme vu en R203, même si Apache2 est de moins en moins utilisé et est remplacé par Nginx.
+<br>
+Voici la configuration du site : 
 
+  - [Index.html](./Site-WEB/index.html)
+  - [Image](./Site-WEB/photo.png)
+  - [CSS](./Site-WEB/style.css)
+  
 
 
 

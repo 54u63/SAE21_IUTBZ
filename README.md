@@ -222,7 +222,23 @@ Voici la configuration du routeur MikroTik pour le NAT et le pare-feu/firewall :
 Nous allons maintenant passer aux limites de cet exercice et aux idées/parties que nous n'avons pas pu terminées. 
 <br>
 Pour que les machines puissent SSH entre elles nous avions besoin de PC qui tourne sur UNIX, nous avons donc choisi une image fournit par GNS3 pour une DEBIAN. Une fois installé et après l'update de la machine via un sudo apt update, nous avons voulu installer le packet OpenSSH mais nous ne pouvions pas le configurer car le clavier qui était sur la machine ne comportait pas ":". Nous avons donc eu le même problème pour la mise en place du serveur Apache2 dans le réseau de l'entreprise. Même après de nombreuse tentative et l'aide de Mr DRUON (que je salue et remercie pour son aide) pour changer le clavier aucune n'a marcher. Par manque de temps nous n'avons pas eu le temps de réinstaller une nouvelle image.
+
 <br>
+Nous avons aussi effectué d'autres vérification. Tout d'abord nous avons vérifié que nous pouvions SSH notre routeur sur l'interface fa0/1 afin de pouvoir accéder au réseau de l'entreprise depuis un PC se situant en 192.168.60.X/24 : </br>
+
+Nous avons d'abord dû configurer le SSH sur le routeur. Pour cela nous devions lui configurer la version de SSh que j'allais utiliser, le nombre de tentative autoriser et un login/mot de passe. Ayant participer à la SAE11 en suivant le MOOC de l'ANSSI nous avons décidé que le login serait _lab418admin_ et le mot de passe
+_/*B2B0rN@TB2B*\__. Enfin nous avons essayé de se connecter en SSH avec PuttySSH: </br>
+
+<img src=./images/config.png>
+<img src=./images/config2.png>
+<img src=./images/ssh.png>
+
+</br>
+
+En vérification supplémentaire nous avons voulu aussi montrer qu'un PC appartenant au réseau 192.168.60.X/24 (pour l'exemple nous avons choisis le serveur DNS configuré précédemment) pouvait accéder au machine de l'entreprise. 
+
+<img src=./images/ping-exterieur.png>
+</br>
 
 Concernant les limites, nous avons autoriser le serveur DNS à recevoir et à donner n'importe quoi à qui veut le demander. Une fois le fonctionnement du réseau compris il est possible d'initaliser un tunnel en UDP vers ce serveur afin d'accéder aux autres machines du réseau. Pour patcher cela il aurait fallut autoriser que les IP provenant du réseau de l'intranet de l'entreprise et interdire tout autres IP.
 
@@ -232,8 +248,7 @@ Concernant les limites, nous avons autoriser le serveur DNS à recevoir et à do
   Mathéo : 
   Antoine : 
 
-  
-  
+  ### Entiérement écrit par MATILLA-NORO Lorenzo
   
 
   

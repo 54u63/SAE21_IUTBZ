@@ -206,7 +206,7 @@ Voici l'historique de toutes les commandes passées après l'installation de bin
   
   Nous avons décider de configurer un firewall/pare-feu sur le routeur MikroTik qui se trouve en la DMZ et l'extérieur car ce dernier permet aux connexions qui sont déjà établies (established) à d'autres connexions de passer et aux nouvelles connections de s'établir seulement si les conditions du DNAT sont respectées. Ces dernières permettent permet par exemple de filtrer tout les paquets entrant mais de pouvoir laisser passer la connexion SSH au routeur mais aussi vers le routeur Cisco du réseau Interne de l'entreprise
   
-<img src=./images/ssh>
+<img src=./images/ssh.png>
 
   ### NAT
   

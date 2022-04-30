@@ -21,7 +21,7 @@ Réaliser en groupe de 3 un petit réseau d'entreprise comprenant : un serveur D
   - [Configuration des machines](#configuration-des-machines)
     - [Switch](#switch) 
     - [Routeurs](#routeurs)
-      - [Configuration du routeur Cisco](#configuration-du-routeur-cisco)
+      - [Configuration du routeur Cisco et ACL](#configuration-du-routeur-cisco-et-acl)
       - [Configuration des Vlans](#configuration-des-vlans) 
       - [Configuration du serveur DHCP](#configuration-du-serveur-dhcp)
     - [Serveur WEB](#serveur-web)
@@ -68,7 +68,7 @@ Pour cette partie nous avons décidé d'utiliser deux types de routeurs. Le prem
 
 <br>
 
-  ### Configuration du routeur Cisco
+  ### Configuration du routeur Cisco et des ACL
   
 Pour le routeur nous avons choisi du lui addresser l'addresse 192.168.50.254 afin qu'il soit dans un réseau spécialisé pour les serveurs ainsi qu'en .254 afin de respecter les règles métiers. Pour le réseau hors de l'entrepise j'ai chosi le réseau 192.168.60.0/24 et le routeur en .254 pour les mêmes raisons que précédemment </br>
 Nous allons maintenant nous intéresser à la configuration de ce dernier sur l'interface fa0/0 et fa0/1 que on peut voir à l'aide de la commande **ip show interface brief** :</br>

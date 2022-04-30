@@ -152,7 +152,50 @@ Ce qui nous donne comme résulat lorsque l'on rentre l'addrese IP du serveur WEB
 [lien vidéo (il faut la télécharger je n'ai pas trouvé d'autre moyen via git](https://github.com/s4uc3-1s-n0t-sus/SAE21_IUTBZ/blob/main/images/vidéos.mp4)
 
   
+  ## Serveur Bind/DNS
+  
+Je précise avant tout que l'addrese du serveur DNS se trouve dans le réseau 192.168.60.0/24 à l'addresse 192.168.60.200/254 comme le préconise les règles métiers. </br>
 
+Tout d'abord pour la configuration du serveur DNS tout les fichiers qui nous intéressent se trouve dans le répertoire **/etc/bind/**
+
+Pour commencer il faut installer bind9 : 
+```
+sudo apt install -y bind9 
+```
+Une fois installer on peut se rendre dans le répertoire **/etc/bind/** </br>
+Après un **ls** on se rend compte qu'il existe plusieurs types de fichier : les db et named.conf </br>
+Dans notre cas ce qui nous intéresse sont les fichiers db.local et named.conf.local. </br>
+
+Nous allons d'abord créer une zone, pour cela il faut éditer le fichier named.conf.local : 
+```
+vim named.conf.local
+```
+<img src=./images/named.conf.local.png>
+</br>
+On commence par copier la configuration du db.local : </br>
+```
+cp db.local db.SAE
+```
+</br>
+Une fois cela fait nous pouvons rentrer dans la configuration de la zone : </br>
+```
+vim db.SAE
+```
+<img src=./images/db.SAE.png></br>
+
+Une fois terminé il faut redémarrer le service bind9 :
+```
+systemctl restart bind9
+```
+
+Une fois cela fait on peut vérifier que notre serveur DNS fonctionne en exécutant les commandes **named-checkconf et named-checkzone** si la première commande ne ressort aucun résultat cela veut dire que la configuration est bonne sinon elle ressort l'erreur avec la ligne. Pour ce qui est de la deuxième cela ressort quelle zone est actuellement active. Si elle n'apparrait pas cela veut dire qu'elle est mal configurée. Il est aussi possible d'utiliser **nslookup** qui permet d'afficher toutes les erreurs de configuration ou on peut aussi sur un autre poste se rendre dans le fichier **/etc/resolv.conf** et renseigner notre serveur DNS (ici 192.168.60.200) et vérifier si il a accès à internet :
+
+<img src=./images/resolv.conf.png>
+<img src=./images/accès-internet.png></br>
+
+Voici l'historique de toutes les commandes passées après l'installation de bind9 : 
+
+<img src=./images/historique-commande.png>
 
 
 

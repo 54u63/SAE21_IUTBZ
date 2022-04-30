@@ -135,9 +135,9 @@ On peut voir que le serveur DHCP et bien connecter au réseau : </br>
 <br>
 Voici la configuration du site : 
 
-  - [Index.html](./Site-WEB/index.html)
-  - [Image](./Site-WEB/photo.png)
-  - [CSS](./Site-WEB/style.css)
+  - [Index.html](./Site WEB/index.html)
+  - [Image](./Site WEB/photo.png)
+  - [CSS](./Site WEB/style.css)
   
 
 

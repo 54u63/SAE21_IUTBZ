@@ -19,9 +19,11 @@ Réaliser en groupe de 3 un petit réseau d'entreprise comprenant : un serveur D
     - [Dans l'entreprise](#dans-lentreprise)
     - [Dans la DMZ](#dans-la-dmz)
   - [Configuration des machines](#configuration-des-machines)
+    - [Switch](#switch) 
     - [Routeurs](#routeurs)
       - [Configuration du routeur Cisco](#configuration-du-routeur-cisco)
       - [Configuration des Vlans](#configuration-des-vlans) 
+      - [Configuration du serveur DHCP](#configuration-du-serveur-dhcp)
     - [Serveur WEB](#serveur-web)
       - [Interne](#interne)
       - [Externe](#externe)
@@ -52,6 +54,14 @@ Serveurs | Vlan 50 | 192.168.50.0/24
 Dans la DMZ se trouve tout les services et serveurs qui sont accessibles depuis l'intranet de l'entreprise et depuis l'extérieur. Pour cela elle doit normalement contenir des adresses publiques afin que l'extérieur puisse y avoir accès, ne disposant pas d'adresse publique nous avons donc utilisé une base d'adresses privés en 192.168.60.0/24 pour l'exercice. Nous avons utiliser un routeur MikroTik entre la DMZ et l'extérieur afin de pouvoir mettre un place un pare-feu / Firewall dont nous verrons la configuration plus tard. Pour la patte du routeur du côté DMZ nous avons choisis l'adresse 192.168.60.254, car par convention l'adresse des routeurs est la dernière adresse du réseau disponible, et pour l'adresse de la patte du côté de l'extérieur nous avons choisis 10.213.10.160 afin que le réseau soit accessible directement depuis les ordinateurs de la salle.
 
   ## Configuration des machines
+  ### Switch
+  
+Nous allons maintenant configurer le switch qui se trouve au milieu de notre montage, pour cela nous avons décidé de passer le lien  qui se trouve sur le port **e0 et e5 en mode TRUNK** afin que toutes les machines du réseau puissent y avoir accès, sur les switchs le mode trunk correspond au mode Dot1q : </br>
+
+<img src=./images/configswitch.png>
+
+</br>
+  
   ### Routeurs
 
 Pour cette partie nous avons décidé d'utiliser deux types de routeurs. Le premier est, comme précisé juste avant, un routeur MikroTik placé entre la DMZ et l'extérieur car il est très pratique lors de l'installation d'un firewall. Pour le deuxième type il s'agit d'un routeur Cisco placé entre la DMZ et l'intranet de l'entreprise, les routeurs Cisco sont très utilisés dans les entreprises et facilement configurables sur GNS3 c'est pourquoi nous l'avons choisis. Pour le protocol de routage nous avons décidé d'adresser directement au routeur Cisco la route du routeur MikroTik car cela est plus simple et nous évite d'utiliser des protocols de routage comme OSPF/RIP/BGP pour seulement une seule route. Nous avons aussi utilisé un routeur Cisco pour mettre en place un serveur DHCP dont nous verrons la configuration juste après.
@@ -95,6 +105,30 @@ On peut maintenant vérifier que cela fonctionne en regardant si le PC1 peut pin
 </br>
 
 Nous pouvons aussi vérifier sur WireShark que les requêtes émises entre les machines sont bien "tagués" par le numéro du Vlan.
+
+
+  ### Configuration du serveur DHCP
+  
+Pour configurer le serveur DHCP nous avons utilisé un routeur Cisco que nous avons addressé en 192.168.50.5/24. Afin que le protocol DHCP puisse fonctionner nous avons configuré ce dernier en fonction des adresses MACS des PC car les requêtes DHCP Discover ne peuvent pas passer "au delà" du switch.</br>
+
+Pour configurer le serveur DHCP en fonction de l'addresse MAC il faut :
+
+- Préciser l'ip et le masque que l'on veut donner à la machine **host @ip @masque**
+- Donner l'addresse MAC de la machine à qui on veut donner cette configuration **hardware-address @mac_adress**
+- Préciser le DNS (Vu au Jour 1)**dns-server @ip_du_dns**
+- Préciser le routeur par défaut **default-routeur @ip_routeur**
+
+Voici par exemple la configuration pour le PC1 du Vlan10 et l'un des PC du Vlan20 : </br>
+
+<img src=./images/confdhcp-mac.png>
+
+</br>
+
+On peut voir que le serveur DHCP et bien connecter au réseau : </br>
+
+<img src=./images/DHCP-PING.png>
+
+
 
 
 

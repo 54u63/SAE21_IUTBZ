@@ -167,17 +167,20 @@ Après un **ls** on se rend compte qu'il existe plusieurs types de fichier : les
 Dans notre cas ce qui nous intéresse sont les fichiers db.local et named.conf.local. </br>
 
 Nous allons d'abord créer une zone, pour cela il faut éditer le fichier named.conf.local : 
+
 ```
 vim named.conf.local
 ```
 <img src=./images/named.conf.local.png>
 </br>
 On commence par copier la configuration du db.local :
+
 ```
 cp db.local db.SAE
 ```
 </br>
 Une fois cela fait nous pouvons rentrer dans la configuration de la zone : 
+
 ```
 vim db.SAE
 ```
